@@ -4,3 +4,48 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+.next/
+out/
+.vercel/
+
+# Replit-specific
+.replit
+.local/
+replit.md
+*.replit-backup
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+*.log.*
+*.out
+*.pid
+*.seed
+*.pid.lock
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Misc
+*.swp
+*.swo
