@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AppStoreCTA() {
   const handleAppStoreClick = () => {
-    window.open('https://apps.apple.com/app/vinny-ai-therapy-training/id6443902156', '_blank');
+    window.open('https://apps.apple.com/us/app/vinnyai-chat/id6740640637', '_blank');
   };
 
   return (

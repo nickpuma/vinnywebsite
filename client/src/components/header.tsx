@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   const handleAppStoreClick = () => {
-    window.open('https://apps.apple.com/app/vinny-ai-therapy-training/id6443902156', '_blank');
+    window.open('https://apps.apple.com/us/app/vinnyai-chat/id6740640637', '_blank');
   };
 
   return (
