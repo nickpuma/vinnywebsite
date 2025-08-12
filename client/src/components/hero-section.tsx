@@ -1,8 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Play } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+  const rotatingTitles = ["Therapist", "Counselor", "Social Worker", "Psychiatrist"] as const;
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleAppStoreClick = () => {
     window.open('https://apps.apple.com/app/vinny-ai-therapy-training/id6443902156', '_blank');
   };
@@ -33,8 +44,20 @@ export default function HeroSection() {
             
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Find Your Voice as a{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                Therapist
+              <span className="inline-block align-baseline h-[1em] min-w-[12ch] whitespace-nowrap">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={rotatingTitles[titleIndex]}
+                    initial={{ rotateX: 90, y: 8, opacity: 0 }}
+                    animate={{ rotateX: 0, y: 0, opacity: 1 }}
+                    exit={{ rotateX: -90, y: -8, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"
+                    style={{ transformOrigin: "bottom" }}
+                  >
+                    {rotatingTitles[titleIndex]}
+                  </motion.span>
+                </AnimatePresence>
               </span>
             </h1>
             
