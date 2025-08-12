@@ -12,7 +12,7 @@ const institutionTypes = [
       "Student skill assessment", 
       "Curriculum integration"
     ],
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
+    image: "https://www.graduateprogram.org/wp-content/uploads/2021/03/Mar-19-Social-Emotional-Learning-for-the-Role-of-School-Counselor_web.jpg"
   },
   {
     title: "Treatment Centers",
@@ -22,7 +22,7 @@ const institutionTypes = [
       "Continuing education",
       "Quality assurance"
     ],
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
+    image: "https://yogawithdakota.com/wp-content/uploads/2020/10/yoga-retreat.jpg"
   },
   {
     title: "Crisis Prevention Centers",
@@ -32,7 +32,7 @@ const institutionTypes = [
       "Suicide prevention training",
       "Emergency response prep"
     ],
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
+    image: "https://www.ascendantny.com/wp-content/uploads/2023/12/tmp659yk67q-1.jpg"
   }
 ];
 
