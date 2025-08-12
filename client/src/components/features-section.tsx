@@ -159,16 +159,20 @@ export default function FeaturesSection() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <X className="w-5 h-5 text-destructive" />
-                    <span className="text-muted-foreground">{item.feature.replace(/iPhone|mobile|anytime|immediate|cost-effective monthly/i, (match) => {
-                      switch(match.toLowerCase()) {
-                        case 'iphone': return 'computer access';
-                        case 'mobile': return 'desktop-bound';
-                        case 'anytime': return 'scheduled sessions';
-                        case 'immediate': return 'delayed feedback';
-                        case 'cost-effective monthly': return 'higher per-course costs';
-                        default: return match;
-                      }
-                    })}</span>
+                    <span className="text-muted-foreground">
+                    {item.feature.replace(/iPhone|mobile|anytime|immediate|cost-effective monthly|available 24\/7|both text and voice interactions/i, (match) => {
+  switch (match.toLowerCase()) {
+    case 'iphone': return 'computer access';
+    case 'mobile': return 'desktop-bound';
+    case 'anytime': return 'scheduled sessions';
+    case 'immediate': return 'Delayed feedback';
+    case 'cost-effective monthly': return 'Higher per-course costs';
+    case 'available 24/7': return 'Not Available 24/7';
+    case 'both text and voice interactions': return 'Only text interactions';
+    default: return match;
+  }
+})}
+</span>
                   </div>
                 </div>
               ))}
