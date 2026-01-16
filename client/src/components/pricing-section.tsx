@@ -10,7 +10,7 @@ const plans = [
     price: "$20",
     period: "/month",
     badge: "Free Trial",
-    badgeColor: "bg-primary/10 text-primary",
+    badgeColor: "bg-white/80 text-[color:var(--vnny-primary-sage-dark)]",
     features: [
       "Unlimited text conversations with AI patients",
       "Practice written therapeutic responses",
@@ -19,8 +19,8 @@ const plans = [
       "iPhone app access"
     ],
     buttonText: "Start Free Trial",
-    buttonStyle: "bg-gradient-to-r from-primary to-accent text-white hover:shadow-lg",
-    cardStyle: "bg-muted/30"
+    buttonStyle: "vnny-btn vnny-btn-primary hover:shadow-lg",
+    cardStyle: "vnny-card"
   },
   {
     name: "Voice Version",
@@ -38,22 +38,22 @@ const plans = [
       "Premium support"
     ],
     buttonText: "Upgrade to Voice",
-    buttonStyle: "bg-white text-primary hover:bg-gray-100",
-    cardStyle: "bg-gradient-to-br from-primary to-accent text-white"
+    buttonStyle: "vnny-btn vnny-btn-secondary bg-white/90 text-[color:var(--vnny-primary-sage-dark)] hover:bg-white",
+    cardStyle: "vnny-bg-sage-dark vnny-noise text-white"
   }
 ];
 
 export default function PricingSection() {
-  const handlePlanClick = (planName: string) => {
-    window.open('https://apps.apple.com/app/vinny-ai-therapy-training/id6443902156', '_blank');
+  const handlePlanClick = () => {
+    window.open('https://apps.apple.com/us/app/vinnyai-chat/id6740640637', '_blank');
   };
 
   const handleContactClick = () => {
-    window.location.href = 'mailto:support@vnny.io?subject=Custom Pricing Inquiry';
+    window.location.href = 'mailto:enterprise@vnny.io?subject=Enterprise Pricing Inquiry';
   };
 
   return (
-    <section id="pricing" className="py-20 bg-background">
+    <section id="pricing" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -62,15 +62,15 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center space-x-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center space-x-2 bg-white/70 text-[color:var(--vnny-text-secondary)] px-4 py-2 rounded-full text-sm font-medium mb-4 border border-[rgba(61,79,63,0.12)]">
             <Tag className="w-4 h-4" />
             <span>Simple Pricing</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[color:var(--vnny-text-primary)] mb-6">
             Affordable Training for Everyone
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose the plan that works for your learning style and budget. All plans include access to our AI patient library.
+          <p className="text-xl text-[color:var(--vnny-text-secondary)] max-w-3xl mx-auto">
+            Choose the plan that fits your learning style. Every plan includes access to the AI patient library.
           </p>
         </motion.div>
         
@@ -90,17 +90,17 @@ export default function PricingSection() {
                 
                 <CardContent className="p-8 lg:p-12">
                   <div className="mb-8">
-                    <h3 className={`text-2xl font-bold mb-2 ${plan.name === 'Voice Version' ? 'text-white' : 'text-foreground'}`}>
+                    <h3 className={`text-2xl font-bold mb-2 ${plan.name === 'Voice Version' ? 'text-white' : 'text-[color:var(--vnny-text-primary)]'}`}>
                       {plan.name}
                     </h3>
-                    <p className={`mb-6 ${plan.name === 'Voice Version' ? 'text-white/90' : 'text-muted-foreground'}`}>
+                    <p className={`mb-6 ${plan.name === 'Voice Version' ? 'text-white/80' : 'text-[color:var(--vnny-text-secondary)]'}`}>
                       {plan.description}
                     </p>
                     <div className="flex items-baseline">
-                      <span className={`text-4xl lg:text-5xl font-bold ${plan.name === 'Voice Version' ? 'text-white' : 'text-foreground'}`}>
+                      <span className={`text-4xl lg:text-5xl font-bold ${plan.name === 'Voice Version' ? 'text-white' : 'text-[color:var(--vnny-text-primary)]'}`}>
                         {plan.price}
                       </span>
-                      <span className={`ml-2 ${plan.name === 'Voice Version' ? 'text-white/90' : 'text-muted-foreground'}`}>
+                      <span className={`ml-2 ${plan.name === 'Voice Version' ? 'text-white/80' : 'text-[color:var(--vnny-text-secondary)]'}`}>
                         {plan.period}
                       </span>
                     </div>
@@ -109,8 +109,8 @@ export default function PricingSection() {
                   <ul className="space-y-4 mb-8">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start space-x-3">
-                        <Check className={`w-5 h-5 mt-0.5 ${plan.name === 'Voice Version' ? 'text-white' : 'text-primary'}`} />
-                        <span className={`${plan.name === 'Voice Version' ? 'text-white/90' : 'text-muted-foreground'}`}>
+                        <Check className={`w-5 h-5 mt-0.5 ${plan.name === 'Voice Version' ? 'text-white' : 'text-[color:var(--vnny-primary-sage-dark)]'}`} />
+                        <span className={`${plan.name === 'Voice Version' ? 'text-white/80' : 'text-[color:var(--vnny-text-secondary)]'}`}>
                           {feature}
                         </span>
                       </li>
@@ -118,7 +118,7 @@ export default function PricingSection() {
                   </ul>
                   
                   <Button 
-                    onClick={() => handlePlanClick(plan.name)}
+                    onClick={handlePlanClick}
                     className={`w-full py-4 font-semibold text-lg transition-all duration-300 ${plan.buttonStyle}`}
                   >
                     <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -139,10 +139,17 @@ export default function PricingSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className="text-muted-foreground mb-4">Questions about pricing or need a custom plan for your institution?</p>
+          <p className="text-[color:var(--vnny-text-secondary)] mb-2">Questions about pricing or need a custom plan for your institution?</p>
+          <p className="text-[color:var(--vnny-text-secondary)] mb-4">
+            Email us at{" "}
+            <a className="font-semibold text-[color:var(--vnny-primary-sage-dark)] hover:text-[color:var(--vnny-accent-ochre)] transition-colors" href="mailto:enterprise@vnny.io">
+              enterprise@vnny.io
+            </a>
+            .
+          </p>
           <button 
             onClick={handleContactClick}
-            className="text-primary hover:text-accent font-semibold transition-colors"
+            className="text-[color:var(--vnny-primary-sage-dark)] hover:text-[color:var(--vnny-accent-ochre)] font-semibold transition-colors"
           >
             Contact us for custom pricing
           </button>

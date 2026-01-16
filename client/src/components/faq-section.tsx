@@ -30,7 +30,7 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="py-20 bg-muted/30">
+    <section id="faq" className="py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -39,10 +39,10 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-[color:var(--vnny-text-primary)] mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-[color:var(--vnny-text-secondary)]">
             Everything you need to know about Vinny and iPhone-based therapy training.
           </p>
         </motion.div>
@@ -58,12 +58,12 @@ export default function FAQSection() {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-background rounded-2xl px-6 border-0 shadow-sm"
+                className="vnny-card rounded-2xl px-6 border-0"
               >
-                <AccordionTrigger className="text-lg font-semibold text-foreground py-6 hover:no-underline">
+                <AccordionTrigger className="text-lg font-semibold text-[color:var(--vnny-text-primary)] py-6 hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6">
+                <AccordionContent className="text-[color:var(--vnny-text-secondary)] pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
